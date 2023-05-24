@@ -45,7 +45,6 @@ struct LandmarkDetail: View {
                 .foregroundColor(.secondary)
 
                 Divider()
-
                 Text("About \(landmark.name)")
                     .font(.title2)
                 Text(landmark.description)
