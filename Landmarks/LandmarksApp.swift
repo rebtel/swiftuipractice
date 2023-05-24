@@ -1,9 +1,9 @@
-//
-//  LandmarksApp.swift
-//  Landmarks
-//
-//  Created by Richmond Ko on 2023-05-24.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+The top-level definition of the Landmarks app.
+*/
 
 import SwiftUI
 
