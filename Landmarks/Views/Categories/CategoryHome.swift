@@ -15,19 +15,9 @@ struct CategoryHome: View {
     var body: some View {
         NavigationView {
             List {
-                ZStack(alignment: .leading) {
-                    NavigationLink {
-                        LandmarkDetail(landmark: modelData.features.first!)
-                    } label: {
-                        EmptyView()
-                    }.opacity(0)
-                    modelData.features.first!.image
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(height: 200)
-                                        .clipped()
-                                        .listRowInsets(EdgeInsets())
-                }.listRowInsets(EdgeInsets())
+                PageView(pages: modelData.features.map { FeatureCard(landmark: $0) })
+                    .aspectRatio(3 / 2, contentMode: .fit)
+                    .listRowInsets(EdgeInsets())
                 
                 ForEach(modelData.categories.keys.sorted(), id: \.self) { key in
                     CategoryRow(categoryName: key, items: modelData.categories[key]!)
